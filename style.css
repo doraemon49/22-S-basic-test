@@ -1,0 +1,224 @@
+@charset 'utf-8';
+* {margin: 0; padding: 0;}
+a {color: inherit; text-decoration: none;}
+li {list-style-type: none;}
+
+header{position: relative;
+    height: 126px;
+    width: 1300px;
+    margin: 0 auto;
+  }
+.logo{
+    height: 44px;
+    width: 160px;
+    background-image: url(./img/logo.png);
+    background-size: cover;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+#menu{position: absolute;
+bottom: 5px; left: 0px;}
+#menu li{
+    float: left;
+    margin-right: 20px;
+}
+#menu:after{
+    display: block;
+    content: '';
+    clear: both;}
+
+.search {background-color: gray;
+    height: 60px;
+    width: 560px;
+    position: absolute;
+    bottom: 5px;
+    right: 50px;
+}
+.search form{
+    height: 50px;
+    width: 600px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.box{
+  width: 1300px;
+  margin: 10px auto;
+
+}
+
+
+
+
+
+
+
+.slide {
+  /* layout */
+  display: flex;
+  flex-wrap: nowrap;
+  /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+  overflow: hidden;
+
+  /* position */
+  /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+  position: relative;
+
+  /* size */
+  position: relative;
+  margin: 10px;
+  width: 1000px;
+
+  /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+  user-select: none;
+}
+.slide_item {
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+  position: relative;
+  left: 0px;
+
+  /* size */
+  width: 100%;
+  height: 300px;
+  /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+  flex-shrink: 0;
+
+  /* transition */
+  transition: left 0.15s;
+}
+.slide_button {
+  /* layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* position */
+  position: absolute;
+  bottom: 20px;
+  /* 버튼이 중앙에 위치하게 하기위해 계산 */
+  top: calc(50% - 16px);
+
+  /* size */
+  width: 32px;
+  height: 32px;
+
+  /* style */
+  border-radius: 100%;
+  background-color: #cccc;
+  cursor: pointer;
+}
+
+.slide_prev_button {
+  left: 10px;
+}
+.slide_next_button {
+  right: 10px;
+}
+
+/* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+.slide_item.item1 {
+  background-image: url("./img/banner1.jpg");
+}
+.slide_item.item2 {
+  background-image: url("./img/banner2.jpg");
+}
+.slide_item.item3 {
+  background-image: url("./img/banner3.jpg");
+}
+.slide_item.item4 {
+  background-image: url("./img/banner4.jpg");
+}
+
+
+/* 페이지네이션 스타일 */
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.slide_pagination {
+  /* layout */
+  display: flex;
+  gap: 5px;
+
+  /* position */
+  position: absolute;
+  bottom: 0;
+  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide_pagination > li {
+  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+  color: #7fb5ff88;
+  cursor: pointer;
+  font-size: 25px;
+}
+.slide_pagination > li.active {
+  /* 현재 슬라이드 색상은 투명도 없이 */
+  color: #7fb5ff;
+}
+
+.slide_item_duplicate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  transition: left 0.15s;
+}
+
+.main{height: 700px;}
+.main1{height: 300px;
+float: left;}
+.main img{
+  height: 200px;
+  width: 200px;
+  margin: 10px 20px;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+.main img:hover{
+  transform: scale(1.1);
+}
+
+.side {width: 980px;
+  height: 350px;} 
+
+
+.pop img{
+  height: 100px;
+  width: 100px;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+.pop img:hover{
+  transform: scale(1.1);
+}
+
+
+.guide{
+  float: left;
+  width: 150px;
+}
+
+.foot1{
+  height: 120px;
+}
+.foot2{
+  height: 80px;
+}
+.foot3{
+  background-color:#cccc;
+}

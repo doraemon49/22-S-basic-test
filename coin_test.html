@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cow_김민</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="slideShow.js"></script>
+</head>
+<body>
+    <header class="nav">
+        <div class="logo"></a></div>
+        <ul id="menu">
+            <li>
+                카테고리
+                <!-- <script src="./category.js"></script> -->
+            </li>
+            <li>홈</li>
+            <li>인기</li>
+            <li>신규</li>
+            <li>마감임박</li>
+            <li>공개예정</li>
+        </ul>
+        
+        <script>
+            let menuEvent = document.getElementById("menu");
+            menuEvent.addEventListener("mouseover", function(event){
+                event.target.style.color = "red";
+            }, false);
+            menuEvent.addEventListener("mouseout", function(event){
+                event.target.style.color = "black";
+            }, false)
+        </script>
+        <div class="search">
+            <form>
+                <input  type="text" name="textfield" 
+                style="text-align:center; width:400px; height:45px; 
+                letter-spacing: -5px">
+                <button 
+                style="width: 40px; height: 45px;">검색</button>
+                <button 
+                style="width: 40px; height: 45px;">리셋</button>
+                <button 
+                style="width: 40px; height: 45px;">닫기</button>
+            </form>
+        </div>
+    </header>
+    
+
+
+    <section class="box">
+        <div class="slide slide_wrap">
+            <div class="slide_item item1">1</div>
+            <div class="slide_item item2">2</div>
+            <div class="slide_item item3">3</div>
+            <div class="slide_item item4">4</div>
+            <!-- <div class="slide_item item5">5</div> -->
+            <div class="slide_prev_button slide_button" id="le">◀</div>
+            <div class="slide_next_button slide_button" id="ri">▶</div>
+            <ul class="slide_pagination"></ul>
+        </div>
+        <script src="./slide.js"></script>
+        <script>
+            let leEvent = document.getElementById("le");
+            leEvent.addEventListener("mouseover", function(event){
+                event.target.style.color = "red";
+            }, false);
+            leEvent.addEventListener("mouseout", function(event){
+                event.target.style.color = "black";
+            }, false)
+        </script>
+        <script>
+            let riEvent = document.getElementById("ri");
+            riEvent.addEventListener("mouseover", function(event){
+                event.target.style.color = "red";
+            }, false);
+            riEvent.addEventListener("mouseout", function(event){
+                event.target.style.color = "black";
+            }, false)
+        </script>
+    </section>
+    
+
+
+    <section class="main box">
+        <h2>주목할만한 프로젝트</h2>
+        <div class="main1">   
+            <img src="./img/notable_project1.jpg" alt="">설명
+            <img src="./img/notable_project2.jpg" alt="">설명
+            <img src="./img/notable_project3.jpg" alt="">설명
+            <img src="./img/notable_project4.jpg" alt="">설명
+        </div>
+        <div class="main1">
+            <img src="./img/notable_project5.jpg" alt="">설명
+            <img src="./img/notable_project6.jpg" alt="">설명
+            <img src="./img/notable_project7.jpg" alt="">설명
+            <img src="./img/notable_project8.jpg" alt="">설명
+        </div>
+
+    </section>
+
+    
+
+
+    <section class="side box">
+        <div class="top">
+            <h2><a href="#">인기 프로젝트</a></h2>
+            <h3><a href="#">전체보기</a></h3>
+        </div>
+        <script>
+            const date = new Date();
+        
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+        
+            // 년.월.일 시:분:초
+            document.write(date.toLocaleDateString('ko-kr'));
+            document.write("  "+hours+":"+minutes+":"+seconds)
+        
+        </script>
+        <div class="pop">
+            <img src="./img/popular_project1.jpg" alt="">설명
+            <img src="./img/popular_project2.jpg" alt="">설명
+            <img src="./img/popular_project3.jpg" alt="">설명
+            <img src="./img/popular_project4.jpg" alt="">설명
+        </div> 
+        <div class="pop">    
+            <img src="./img/popular_project5.jpg" alt="">설명
+            <img src="./img/popular_project6.jpg" alt="">설명
+            <img src="./img/popular_project7.jpg" alt="">설명
+            <img src="./img/popular_project8.jpg" alt="">설명
+        </div>
+        <div id="all">
+            <button><a href="#">인기 프로젝트 전체보기</a></button>
+        </div>
+        <script>
+            let allEvent = document.getElementById("all");
+            allEvent.addEventListener("mouseover", function(event){
+                event.target.style.color = "gray";
+            }, false);
+            allEvent.addEventListener("mouseout", function(event){
+                event.target.style.color = "black";
+            }, false)
+        </script>
+
+    </section>
+
+    <footer>
+        <div class="foot1 box" id="black">
+            <div class="guide">
+                <p><strong>텀블벅</strong></p>
+                <p>공지사항</p>
+                <p>서비스 소개</p>
+                <p>채용</p>
+                <p>2021 연말 결산</p>
+            </div>
+            <div class="guide">
+                <p><strong>이용안내</strong></p>
+                <p>헬프 센터</p>
+                <p>첫 후원 가이드</p>
+                <p>창작자 가이드</p>
+                <p>제휴 협력</p>
+            </div>
+            <div class="guide">
+                <p><strong>정책</strong></p>
+                <p>이용약관</p>
+                <p>개인정보 처리방침</p>
+                <p>프로젝트 심사 기준</p>
+            </div>
+            <div class="guide">
+                <p><strong>App</strong></p>
+                <button>안드로이드</button>
+                <br>
+                <button>iOS</button>
+            </div>
+            <div class="call">
+                <p><strong>고객지원</strong></p>
+                <p>평일 9:00 ~ 17:00 (12:00 ~ 14:00 제외)</p>
+                <button>텀블벅에 문의</button>
+            </div>
+        </div>
+        <script>
+            let blEvent = document.getElementById("black");
+            blEvent.addEventListener("mouseover", function(event){
+                event.target.style.color = "black";
+            }, false);
+            blEvent.addEventListener("mouseout", function(event){
+                event.target.style.color = "gray";
+            }, false)
+        </script>
+        <div class="foot2 box">
+            <p>
+                <strong>회사명</strong>
+                텀블벅(주)
+                <strong>주소</strong>
+                서울 서초구 서초대로 398, 19층 (서초동, BNK디지털)
+                <strong>대표</strong>
+                김동환
+                <strong>사업자등록번호</strong>
+                105 87 52823
+            </p>
+            <p>
+                <strong>통신판매업 신고번호</strong>
+                2019 3010165 30 2 02129
+                <strong>대표번호</strong>
+                02 6080 0760
+            </p>
+            <p>
+                c 2022 Tumbbug Inc.
+            </p>
+        </div>
+        <div class="foot3">
+            <p class="box">
+            텀블벅은 플랫폼 제공자로서 프로젝트의 당사자가 아니며, 
+            직접적인 통신판매를 진행하지 않습니다. 프로젝트의 완수 및 선물제공의 책임은 
+            해당 프로젝트의 창작자에게 있으며, 프로젝트와 관련하여 
+            후원자와 발생하는 법적 분쟁에 대한 책임은 해당 창작자가 부담합니다.
+            </p>
+        </div>
+    </footer>    
+    
+</body>
